@@ -11,4 +11,23 @@ const index = async () => {
     }
 };
 
-export {index}; 
+const show = async (id) =>{
+    try {
+        const res = await axios.get(`${BASE_URL}/${id}`)
+        return res.data.pet
+    } catch (error) {
+    console.log(error)
+
+    }
+}
+
+const create = async (formData) =>{
+    try {
+      const res = await axios.post(BASE_URL, formData)  
+      return res.data.pet
+    } catch (error) {
+    console.log(error)
+
+    }
+}
+export {index, show, create}; 

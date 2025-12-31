@@ -1,3 +1,4 @@
+import { Link } from "react-router"
 
 const PetList = ({pets}) => {
   return (
@@ -11,8 +12,12 @@ const PetList = ({pets}) => {
         {
             pets.map(
                 (onePet) => (
-                    <li key={onePet._id}>{onePet.name}</li>
+                <li key={onePet._id}>{onePet.name}
+                <Link to={`/pets/${onePet._id}`}>  {onePet.name}</Link>  
+
+                </li>
                 )
+
             )
         }
      </ul>}
